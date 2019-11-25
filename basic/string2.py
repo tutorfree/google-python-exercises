@@ -72,6 +72,7 @@ def front_back(a, b):
 
   return a[:am] + b[:bm] + a[am:] + b[bm:]
 
+
 # Simple provided test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
 def test(got, expected):
