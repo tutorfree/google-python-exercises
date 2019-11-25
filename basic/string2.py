@@ -12,13 +12,21 @@
 # Unless it already ends in 'ing', in which case add 'ly' instead.
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
+#def verbing(s):
+    ## +++your code here+++
+    #if len(s) > 2:
+        #if  (s[-3:] != 'ing'):
+            #s + 'ing'
+        #else:
+            #s + 'ly'
+    #return s
+    
 def verbing(s):
-    if len(s) < 3:
-        return s
-    elif(s[-3:] == 'ing'):
-        return ''.join([s,'ly'])
-    else:
-        return ''.join([s,'ing'])
+  if len(s) < 3:
+    return s
+  if s.endswith('ing'): # se verdadeiro final igual a 'ing'
+    return s + 'ly'
+  return s + 'ing'
 
 
 # E. not_bad
@@ -28,13 +36,13 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
-  n = s.find('not') # retorna o indice da substring
+  n = s.find('not') # retorna o indice da substring 'not'
   if n > 0:
-    b = s.find('bad') # retorna o indice da substring
+    b = s.find('bad') # retorna o indice da substring 'bad'
     if b > n+3: # n+3, oprimeiro indice + comprimento da substring
       # s[:n] - retorna 'This dinner is not that', deixando 'bad' de fora
       # + 'good' + concatena/adiciona 'good'
-      # s[b+3:] - deixando defora do indice inicial 'bad' + seu comprimento, retorna '!'
+      # s[b+3:] - deixando de fora do indice inicial 'bad' + seu comprimento, retorna '!'
       return s[:n] + 'good' + s[b+3:] 
   return s
 
@@ -47,7 +55,7 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
-  
+  # +++your code here+++
   x = len(a) // 2
   y = len(a[x:])
   if y > x:
