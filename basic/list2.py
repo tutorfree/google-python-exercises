@@ -18,8 +18,8 @@ def remove_adjacent(nums):
     lista = []
     
     for num in nums:
-		if num not in lista:
-			lista.append(num)
+        if num not in lista:
+            lista.append(num)
 		
     return lista
 
